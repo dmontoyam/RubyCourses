@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+
+  <br>
+
+  <strong>Description</strong>
+  <%= @course.description %>
+
+  <br>
+
+  <strong>Price</strong>
+  <%= @course.price %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+
+<br><br>
+
+<h2>Comments</h2>
+
+	<div id="comments">
+		<%# Expands to render partial: 'comments/comment', collection: @course.comments %>
+		<%= render @course.comments %>
+	</div>
+<%= render 'comments/new', course: @course%>
+</div>
